@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import logo from "../assets/EcoEco_Chancho.png";
+import logo from "../assets/ecochancho_blanco.png";
 import "../NavBar/NavBar.css";
 
 const Navbar = () => {
@@ -23,18 +23,25 @@ const Navbar = () => {
         </div>
         <ul className={menuOpen ? "navbar-links open" : "navbar-links"}>
           <li>
-            <a href="#">SOBRE NOSOTROS</a>
+            <a href="#">HOME </a>
           </li>
           <li>
-            <a href="#">CATALOGO</a>
+            <a href="#">CATALOGUE</a>
           </li>
           <li>
-            <div className="search-input">
-              <input type="text" placeholder="BUSCAR PRODUCTO" />
+            <a href="#">ABOUT US</a>
+          </li>
+          <li>
+            <a href="#">CONTACT</a>
+          </li>
+          <li>
+            <div>
+              <input
+                className="search-input"
+                type="text"
+                placeholder="SEARCH PRODUCT"
+              />
             </div>
-          </li>
-          <li>
-            <a href="#">CONTACTO</a>
           </li>
         </ul>
       </nav>
