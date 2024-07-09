@@ -1,0 +1,26 @@
+.cardContainer {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  background-color: green;
+  width: 400px;
+  height: 400px;
+  border-radius: 20%;
+}
+.im {
+  display: flex;
+  flex-direction: column-reverse;
+
+  align-items: center;
+}
+.textContainer {
+  width: 300px;
+
+  text-align: center;
+  margin-bottom: 5%;
+}
+.textContainer hr {
+  width: 100%;
+  height: 3px;
+  background-color: white;
+}
