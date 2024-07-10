@@ -1,8 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import Navbar from "./Components/NavBar/NavBar";
-/* import Inicio from "./Pages/Inicio"; */
-import Contacto from "./Pages/Contacto/Contacto";
+import Inicio from "./Pages/Inicio";
 import Comparador from "./Pages/Comparador/Comparador";
 
 function App() {
@@ -11,9 +10,9 @@ function App() {
   return (
     <>
       <Navbar />
-      {/*  <Inicio /> */}
-      <Contacto />
-      {/*  <Comparador /> */}
+      <Inicio />
+
+      {/* <Comparador /> */}
     </>
   );
 }
