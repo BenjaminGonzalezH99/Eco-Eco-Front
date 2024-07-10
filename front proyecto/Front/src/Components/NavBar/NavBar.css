@@ -18,6 +18,8 @@ header {
   align-items: center;
   width: 100%;
   padding-right: 10%;
+  position: sticky;
+  font: oblique bold 90% cursive;
 }
 
 .navbar-logo {
@@ -101,7 +103,7 @@ header {
     top: 100%;
     left: 60%;
     width: 40%;
-    height: 70vh;
+    height: 100vh;
     background-color: #648d27;
     padding: 1rem;
     transform: rotateY(45deg);
