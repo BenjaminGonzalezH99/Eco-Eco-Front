@@ -4,7 +4,7 @@ import logo_eco from "../../Components/assets/EcoEco_Chancho.png";
 function Contacto() {
   const [state, handleSubmit] = useForm("mjkbkvoe");
   if (state.succeeded) {
-    return <p>Thanks for joining!</p>;
+    return <p>Gracias!</p>;
   }
   return (
     <>
@@ -17,7 +17,7 @@ function Contacto() {
             <input
               className="input-contact"
               id="email"
-              placeholder="Escribe Aqui"
+              placeholder="Escribe Aquí"
             />
 
             <label className="label-contact" htmlFor="email">
@@ -28,7 +28,7 @@ function Contacto() {
               id="email"
               type="email"
               name="email"
-              placeholder="Escribe Aqui"
+              placeholder="Escribe Aquí"
             />
             <ValidationError
               prefix="Email"
