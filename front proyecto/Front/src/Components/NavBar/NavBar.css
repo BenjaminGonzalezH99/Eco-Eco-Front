@@ -64,6 +64,7 @@ header {
   color: #000;
   display: block;
   font-weight: bold;
+  font-style: oblique;
   width: 80%;
   border-radius: 15px;
   padding: 1em;
