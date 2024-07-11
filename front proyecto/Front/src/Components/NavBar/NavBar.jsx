@@ -38,7 +38,7 @@ function Navbar() {
             {/* <a href="#">CATALOGUE</a> */}
           </li>
           <li onClick={() => setPages("AboutUS")}>
-            <Link to={"/about-us"}>
+            <Link to={"/AboutUs"}>
               ABOUT US
               {Pages === "AboutUS"}
             </Link>

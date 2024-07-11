@@ -1,27 +1,38 @@
+import Cards from "../../Components/Cards/Cards";
 import "./Comparador.css";
 
 function Comparador() {
   return (
     <>
-      <div className="cssportal-grid">
-        <div className="div1">div1</div>
-        <div className="div2">div2</div>
-        <div className="div3">
-          <label>
-            <input type="radio" name="periodo" value="dias" /> Días
-          </label>
-          <label>
-            <input type="radio" name="periodo" value="semanas" /> Semanas
-          </label>
-          <label>
-            <input type="radio" name="periodo" value="meses" /> Meses
-          </label>
-          <label>
-            <input type="radio" name="periodo" value="años" /> Años
-          </label>
+      <div className="container">
+        <div className="div1 DIV">
+          <Cards />
         </div>
-        <div className="div4">div4</div>
-        <div className="div5">div5</div>
+
+        <div className="div2 DIV">
+          <Cards />
+        </div>
+
+        <div className="costoUso DIV div-borde">
+          <div className="costoUso-datos div-izquierda">2511</div>
+          <div className="costoUso-datos DIV-centro">COSTO POR USO </div>
+          <div className="costoUso-datos div-derecha">25122</div>
+        </div>
+        <div className="div5 DIV">
+          <div className="div-precio div-borde">
+            <div className="precio div-izquierda">1615</div>
+            <div className="precio DIV-centro">PRECIO</div>
+            <div className="precio div-derecha">1513135</div>
+          </div>
+
+          <div className="div-durabilidad div-borde">
+            <div className="durabilidad div-izquierda">35693</div>
+            <div className="durabilidad DIV-centro">DURABILIDAD</div>
+            <div className="durabilidad div-derecha">879397</div>
+          </div>
+        </div>
+
+        {/* ----------- */}
       </div>
     </>
   );
