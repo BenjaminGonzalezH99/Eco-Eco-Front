@@ -9,7 +9,7 @@ function Cards({ producto }) {
             src={`src/Components/assets/${
               producto && producto.imagenProductoAlternativo
             }`}
-            alt="razuradora"
+            alt="producto"
           />
         </div>
         <hr />
