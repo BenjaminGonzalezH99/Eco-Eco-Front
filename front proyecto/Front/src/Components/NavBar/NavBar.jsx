@@ -32,21 +32,21 @@ function Navbar() {
           </li>
           <li onClick={() => setPages("Catalogo")}>
             <Link to={"/catalogo"}>
-              CATALOGUE
+              CATÁLOGO
               {Pages === "Catalogo"}
             </Link>
-            {/* <a href="#">CATALOGUE</a> */}
+            {/* <a href="#">CATALOGO</a> */}
           </li>
           <li onClick={() => setPages("AboutUS")}>
             <Link to={"/about-us"}>
-              ABOUT US
+              SOBRE NOSOTRES
               {Pages === "AboutUS"}
             </Link>
             {/*  <a href="#">ABOUT US</a> */}
           </li>
           <li onClick={() => setPages("Contacto")}>
             <Link to={"/contacto"}>
-              CONTACT
+              CONTACTO
               {Pages === "Contacto"}
             </Link>
             {/*  <a href="#">CONTACT</a> */}

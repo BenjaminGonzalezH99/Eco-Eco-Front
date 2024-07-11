@@ -1,0 +1,41 @@
+#cssportal-grid {
+	display: grid;
+	grid-template-rows: repeat(6, 1fr);
+	grid-template-columns: repeat(6, 1fr);
+	gap: 20px 10px;
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(to top, #fff);
+    text-align: center;
+    justify-content: center;
+    
+   
+}
+#div1 {
+	grid-area: 2 / 1 / 6 / 3;
+    background-color: rgba(149,199,98, 0.5);
+}
+#div2 {
+	grid-area: 2 / 3 / 4 / 4;
+	background-color: rgba(113,15,188, 0.5);
+}
+#div3 {
+	grid-area: 4 / 3 / 6 / 4;
+	background-color: rgba(254,69,178, 0.5);
+}
+#div4 {
+	grid-area: 2 / 4 / 4 / 5;
+	background-color: rgba(61,232,21, 0.5);
+}
+#div5 {
+	grid-area: 4 / 4 / 6 / 5;
+	background-color: rgba(227,180,89, 0.5);
+}
+#div6 {
+	grid-area: 2 / 5 / 6 / 7;
+	background-color: rgba(107,243,5, 0.5);
+}
+.card-home{
+    border-radius: 20%;
+    
+}
