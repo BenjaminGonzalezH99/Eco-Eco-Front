@@ -3,6 +3,7 @@ import Navbar from "./Components/NavBar/NavBar";
 import Inicio from "./Pages/Inicio";
 import Contacto from "./Pages/Contacto/Contacto";
 import Comparador from "./Pages/Comparador/Comparador";
+import "./App.css";
 
 /* import Catalogo from "./Pages/Catalogo";*/
 

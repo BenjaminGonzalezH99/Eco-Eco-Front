@@ -12,7 +12,7 @@ function Inicio() {
     client.get().then((response) => {
       setProducto(response.data);
     });
-  }, [contador]);
+  }, []);
 
   return (
     <div>
