@@ -24,7 +24,7 @@ function Contacto() {
               Correo
             </label>
             <input
-              clasaName="input-contact"
+              className="input-contact"
               id="email"
               type="email"
               name="email"
