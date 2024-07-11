@@ -1,10 +1,3 @@
-:root {
-  --verdePrim: #648d27;
-  --verdeSec: #e8f0c3;
-  font-family: "DM Sans";
-  font-size: 22px;
-}
-
 .cardContainer {
   background-color: var(--verdeSec);
   width: 400px;
