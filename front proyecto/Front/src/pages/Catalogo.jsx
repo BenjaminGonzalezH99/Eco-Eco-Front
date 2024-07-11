@@ -1,14 +1,12 @@
 import React from 'react';
-import Catalogo from '../Catalogo';
-import Navbar from '../Components/NavBar/NavBar';
+import Catalogo from './Catalogo';
 
-const CatalogoPage = () => {
+function CatalogoPage() {
   return (
     <div>
-      <h1>Catalogo</h1>
-      <Catalogo />
+      <Categoria />
     </div>
   );
-};
+}
 
 export default CatalogoPage;
