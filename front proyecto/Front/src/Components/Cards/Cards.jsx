@@ -3,16 +3,21 @@ import "./Cards.css";
 function Cards({ producto }) {
   return (
     <div className="cardContainer">
-      <div>
+      <div className="card">
         <div className="im">
-          <img src="src/Components/assets/image.png" alt="razuradora" />
+          <img
+            src={`src/Components/assets/${
+              producto && producto.imagenProductoAlternativo
+            }`}
+            alt="razuradora"
+          />
         </div>
+        <hr />
         <div className="textContainer">
-          <hr />
           <h2 className="titulo">
             {producto && producto.nombreProductoAlternativo}{" "}
           </h2>
-          <b className="subtitulo">Desechable</b>
+          {/* <b className="subtitulo">Desechable</b> */}
         </div>
       </div>
     </div>
