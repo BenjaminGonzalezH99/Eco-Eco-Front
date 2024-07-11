@@ -18,6 +18,8 @@ header {
   align-items: center;
   width: 100%;
   padding-right: 10%;
+  position: sticky;
+  font: oblique bold 90% cursive;
 }
 
 .navbar-logo {
@@ -31,9 +33,7 @@ header {
 }
 
 .navbar-logo p {
-  font-size: 20px;
-  font-weight: bold;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font: oblique bold 150% cursive;
 }
 
 .navbar-links {
@@ -41,6 +41,7 @@ header {
   list-style: none;
   margin: 0;
   padding: 0;
+  align-items: center; /* Alinea los elementos verticalmente */
 }
 
 .navbar-links li {
@@ -60,7 +61,17 @@ header {
 }
 
 .search-input {
-  background-color: aliceblue;
+  background-color: rgb(255, 255, 255);
+  color: transparent;
+  color: #000;
+  display: block;
+  font-weight: bold;
+  font-style: oblique;
+  width: 80%;
+  border-radius: 15px;
+  padding: 1em;
+  font-size: small;
+  text-align: center;
 }
 
 .menu-icon {
@@ -80,7 +91,7 @@ header {
   background-color: #f1b749;
 }
 
-@media (max-width: 912px) {
+@media (max-width: 995px) {
   .navbar {
     padding-right: 5%;
   }
@@ -90,14 +101,17 @@ header {
     flex-direction: column;
     position: absolute;
     top: 100%;
-    left: 0;
-    width: 100%;
+    left: 60%;
+    width: 40%;
+    height: 100vh;
     background-color: #648d27;
     padding: 1rem;
+    transform: rotateY(45deg);
   }
 
   .navbar-links.open {
     display: flex;
+    gap: 25px;
   }
 
   .navbar-links li {
@@ -106,7 +120,7 @@ header {
   }
 
   .search-input {
-    margin-top: 1rem;
+    display: none; /* Oculta el input de búsqueda */
   }
 
   .menu-icon {
