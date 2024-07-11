@@ -26,7 +26,7 @@ const Navbar = () => {
             <a href="#">SOBRE NOSOTROS</a>
           </li>
           <li>
-            <a href="#">CATALOGO</a>
+            <a href="./Pages/Catalogo">CATALOGO</a>
           </li>
           <li>
             <div className="search-input">
