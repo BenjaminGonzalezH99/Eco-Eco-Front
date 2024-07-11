@@ -4,7 +4,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 const client = axios.create({
-  baseURL: "http://localhost:8080/productoAlternativos/buscar/2",
+  baseURL: "http://localhost:8080/productoAlternativos/buscar/3",
 });
 function Inicio() {
   const [contador, setContador] = useState(1);
