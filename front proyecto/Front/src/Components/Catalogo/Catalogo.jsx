@@ -1,51 +1,33 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import Navbar from '../NavBar/NavBar';
+import PropTypes from 'prop-types';
 
-const Catalogo = () => {
+const Catalogo = ({ items }) => {
   return (
-    <><div className="content">
+    <>
+      <div className="content">
         <h1>Catálogo</h1>
         <p>FILTROS</p>
         <div className="container">
-          <div className="card">
-            <img src="rasuradora.jpg" alt="Rasuradora Desechable" />
-            <h2>Rasuradora</h2>
-            <p>Desechable</p>
-          </div>
-
-          <div className="card">
-            <img src="toalla.jpg" alt="Toalla Higiénica Reutilizable" />
-            <h2>Toalla Higiénica</h2>
-            <p>Reutilizable</p>
-          </div>
-
-          <div className="card">
-            <img src="rasuradora.jpg" alt="Rasuradora Intercambiable" />
-            <h2>Rasuradora</h2>
-            <p>Intercambiable</p>
-          </div>
-
-          <div className="card">
-            <img src="mat-horno.jpg" alt="Mat De Horno De Silicona" />
-            <h2>Mat De Horno</h2>
-            <p>De Silicona</p>
-          </div>
-
-          <div className="card">
-            <img src="toalla.jpg" alt="Toalla Higiénica Reutilizable" />
-            <h2>Toalla Higiénica</h2>
-            <p>Reutilizable</p>
-          </div>
-
-          <div className="card">
-            <img src="mat-horno.jpg" alt="Mat De Horno De Silicona" />
-            <h2>Mat De Horno</h2>
-            <p>De Silicona</p>
-          </div>
+          {items.map((item) => (
+            <div key={item.id} className="card">
+              <img src={item.image} alt={item.name} />
+              <h2>{item.name}</h2>
+              <p>{item.type}</p>
+            </div>
+          ))}
         </div>
-      </div></>
+      </div>
+    </>
   );
+};
+
+Catalogo.propTypes = {
+  items: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    image: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
+  })).isRequired,
 };
 
 export default Catalogo;
