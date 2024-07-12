@@ -1,74 +1,115 @@
 import { useEffect, useState } from "react";
-import Cards from "../../Components/Cards/Cards";
+import CardsPA from "../../Components/Cards/CardsPA";
+import CardsPO from "../../Components/Cards/CardsPO";
 import "./Comparador.css";
 import axios from "axios";
+import { useParams } from "react-router-dom";
 
-const url = "http://localhost:8080/productoOriginales";
+const url = "http://localhost:8080/";
+const client = axios.create({
+  baseURL: "http://localhost:8080/",
+});
+
 function Comparador() {
-  const [product1, setProduct1] = useState({});
-  const [product2, setProduct2] = useState({});
+  const { id } = useParams();
+  const [product, setProduct] = useState({});
+  const [isOriginal, setIsOriginal] = useState(true);
 
   useEffect(() => {
-    axios.get(`${url}/buscar/5`).then((response) => {
-      setProduct1(response.data);
+    client.get(`${url}productoOriginales/buscar/${id}`).then((response) => {
+      const productoOriginal = response.data;
+      if (productoOriginal) {
+        setIsOriginal(true);
+        setProduct({ original: productoOriginal });
+      } else {
+        client
+          .get(`${url}productoAlternativos/buscar/${id}`)
+          .then((responseAlternativo) => {
+            const productoAlternativo = responseAlternativo.data;
+            setIsOriginal(false);
+            setProduct({ alternativo: productoAlternativo });
+          });
+      }
     });
-  }, []);
+  }, [id]);
 
-  useEffect(() => {
-    axios.get(`${url}/buscar/6`).then((response) => {
-      setProduct2(response.data);
-    });
-  }, []);
-  const costoPorUsoOriginal =
-    product1.precioProductoOriginal / product1.precioProductoOriginal;
-  const costoPorUsoAlternativo =
-    product2.precioProductoAlternativo / product2.precioProductoAlternativo;
+  if (!product.original && !product.alternativo) {
+    return <div>Cargando...</div>;
+  }
+
+  let productoOriginal;
+  let productoAlternativo;
+  if (isOriginal) {
+    productoOriginal = product.original;
+    productoAlternativo = {};
+  } else {
+    productoAlternativo = product.alternativo;
+    productoOriginal = {};
+  }
+
+  const costoPorUsoOriginal = (
+    productoOriginal.precioProductoOriginal /
+    productoOriginal.durabilidadProductoOriginal
+  ).toFixed(1);
+  const costoPorUsoAlternativo = (
+    productoAlternativo.precioProductoAlternativo /
+    productoAlternativo.durabilidadProductoAlternativo
+  ).toFixed(1);
+
   return (
     <>
       <div className="container">
         <div className="div1 DIV">
-          <Cards />
+          {isOriginal ? (
+            <CardsPO producto={productoOriginal} />
+          ) : (
+            <CardsPA producto={productoAlternativo} />
+          )}
         </div>
 
         <div className="div2 DIV">
-          <Cards />
+          {isOriginal ? (
+            <CardsPA producto={productoAlternativo} />
+          ) : (
+            <CardsPO producto={productoOriginal} />
+          )}
         </div>
 
         <div className="costoUso DIV div-borde">
           <div className="costoUso-datos div-izquierda">
-            {costoPorUsoOriginal}
+            {isOriginal ? costoPorUsoOriginal : costoPorUsoAlternativo}
           </div>
           <div className="costoUso-datos DIV-centro">COSTO POR USO </div>
           <div className="costoUso-datos div-derecha">
-            {costoPorUsoAlternativo}
+            {isOriginal ? costoPorUsoAlternativo : costoPorUsoOriginal}
           </div>
         </div>
         <div className="div5 DIV">
           <div className="div-precio div-borde">
             <div className="precio div-izquierda">
-              {product1 && product1.precioProductoOriginal
-                ? product1.precioProductoOriginal
-                : "No disponible"}
+              {isOriginal
+                ? productoOriginal.precioProductoOriginal
+                : productoAlternativo.precioProductoAlternativo}
             </div>
             <div className="precio DIV-centro">PRECIO</div>
             <div className="precio div-derecha">
-              {product2 && product2.ProductoAlternativo
-                ? product2.ProductoAlternativo
-                : "No disponible"}
+              {isOriginal
+                ? productoAlternativo.precioProductoAlternativo
+                : productoOriginal.precioProductoOriginal}
             </div>
           </div>
 
           <div className="div-durabilidad div-borde">
             <div className="durabilidad div-izquierda">
-              {product1 && product1.durabilidadProductoOriginal
-                ? product1.durabilidadProductoOriginal
-                : "No disponible"}
+              {isOriginal
+                ? productoOriginal.durabilidadProductoOriginal
+                : productoAlternativo.durabilidadProductoAlternativo}
             </div>
             <div className="durabilidad DIV-centro">DURABILIDAD</div>
             <div className="durabilidad div-derecha">
-              {product2 && product2.durabilidadProductoAlternativo
-                ? product2.durabilidadProductoAlternativo
-                : "No disponible"}
+              {isOriginal
+                ? productoAlternativo.durabilidadProductoAlternativo
+                : productoOriginal.durabilidadProductoOriginal}
             </div>
           </div>
         </div>

@@ -8,7 +8,6 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
   z-index: 1;
 }
 
@@ -18,7 +17,6 @@ header {
   align-items: center;
   width: 100%;
   padding-right: 10%;
-  position: sticky;
   font: oblique bold 90% cursive;
 }
 
