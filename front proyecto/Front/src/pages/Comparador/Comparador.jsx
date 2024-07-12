@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import CardsPO from "../../Components/Cards/CardsPO";
-import CardsPA from "../../Components/Cards/CardsPA";
+import CardsPO from "../../Components/Cards/CardsPO/CardsPO";
+import CardsPA from "../../Components/Cards/CardsPA/CardsPA";
 import "./Comparador.css";
 import axios from "axios";
 
@@ -37,7 +37,7 @@ function Comparador() {
     <>
       <div className="container">
         <div className="div1 DIV">
-          <CardsPO producto={producto1} />
+          <CardsPO producto={producto1}></CardsPO>
         </div>
 
         <div className="div2 DIV">

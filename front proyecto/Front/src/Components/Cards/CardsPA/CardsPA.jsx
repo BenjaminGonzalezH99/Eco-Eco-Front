@@ -11,9 +11,7 @@ function CardsPA({ producto }) {
       <div className="card">
         <div className="im">
           <img
-            src={`src/Components/assets/${
-              producto && producto.imagenProductoAlternativo
-            }`}
+            src={`src/Components/assets/${producto.imagenProductoAlternativo}`}
             /* alt="razuradora" */
           />
         </div>

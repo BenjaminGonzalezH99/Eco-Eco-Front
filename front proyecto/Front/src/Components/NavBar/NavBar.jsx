@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import logo from "../assets/EcoEco_Chancho.png";
+import logo from "../assets/EcoEco_Logo_Blanco_Horizontal.png";
 import "../NavBar/NavBar.css";
 import { Link } from "react-router-dom";
 

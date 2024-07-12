@@ -1,4 +1,3 @@
-// CardsPO.js
 import "./CardsPO.css";
 import { useNavigate } from "react-router-dom";
 function CardsPO({ producto }) {

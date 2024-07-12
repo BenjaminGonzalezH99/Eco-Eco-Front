@@ -1,5 +1,5 @@
-import CardsPA from "../Components/Cards/CardsPA";
-import CardsPO from "../Components/Cards/CardsPO";
+import CardsPA from "../Components/Cards/CardsPA/CardsPA";
+import CardsPO from "../Components/Cards/CardsPO/CardsPO";
 import "./Inicio.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
