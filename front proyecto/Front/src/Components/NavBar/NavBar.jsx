@@ -1,7 +1,7 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import logo from "../assets/ecochancho_blanco.png";
 import "../NavBar/NavBar.css";
-import { Link } from "react-router-dom";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -37,10 +37,10 @@ function Navbar() {
             </Link>
             {/* <a href="#">CATALOGUE</a> */}
           </li>
-          <li onClick={() => setPages("AboutUS")}>
-            <Link to={"/about-us"}>
+          <li onClick={() => setPages("SobreNosotros")}>
+            <Link to={"/sobreNosotros"}>
               ABOUT US
-              {Pages === "AboutUS"}
+              {Pages === "SobreNosotros"}
             </Link>
             {/*  <a href="#">ABOUT US</a> */}
           </li>
