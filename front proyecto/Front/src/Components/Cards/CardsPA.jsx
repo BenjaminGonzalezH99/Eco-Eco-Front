@@ -1,8 +1,13 @@
-import "./Cards.css";
+import "./CardsPA.css";
+import { useNavigate } from "react-router-dom";
 
-function Cards({ producto }) {
+function CardsPA({ producto }) {
+  const navigate = useNavigate();
+  const handleDivClick = () => {
+    navigate(`/comparador/${producto.idProductoAlternativo}`);
+  };
   return (
-    <div className="cardContainer">
+    <div className="cardContainer" onClick={handleDivClick}>
       <div className="card">
         <div className="im">
           <img
@@ -24,4 +29,4 @@ function Cards({ producto }) {
   );
 }
 
-export default Cards;
+export default CardsPA;
