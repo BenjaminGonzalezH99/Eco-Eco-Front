@@ -1,4 +1,4 @@
-.cssportal-grid {
+.container {
   display: grid;
   grid-template-rows: repeat(12, 1fr);
   grid-template-columns: repeat(12, 1fr);
@@ -8,21 +8,72 @@
 }
 .div1 {
   grid-area: 3 / 3 / 8 / 6;
-  background-color: rgba(54, 159, 2, 0.5);
 }
 .div2 {
   grid-area: 3 / 6 / 8 / 9;
-  background-color: rgba(246, 64, 87, 0.5);
 }
-.div3 {
-  grid-area: 8 / 3 / 9 / 9;
-  background-color: rgba(145, 109, 237, 0.5);
-}
-.div4 {
+
+.costoUso {
   grid-area: 9 / 3 / 10 / 9;
-  background-color: rgba(167, 88, 241, 0.5);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.costoUso-datos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  height: 60px;
+
+  font: oblique bold 90% cursive;
+  background-color: transparent;
+}
+.DIV-centro {
+  background-color: #f1b749;
 }
 .div5 {
   grid-area: 10 / 3 / 12 / 9;
-  background-color: rgba(5, 127, 167, 0.5);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.DIV {
+  cursor: pointer;
+}
+.precio,
+.durabilidad {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  font: oblique bold 90% cursive;
+  flex: 1;
+  height: 50px;
+}
+.div-precio,
+.div-durabilidad {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.div-borde {
+  border-radius: 15px;
+}
+.div-izquierda {
+  background-color: #a7aeaf;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
+.div-derecha {
+  background-color: #648d27;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
 }

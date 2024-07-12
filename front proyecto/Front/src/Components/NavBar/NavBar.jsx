@@ -32,21 +32,28 @@ function Navbar() {
           </li>
           <li onClick={() => setPages("Catalogo")}>
             <Link to={"/catalogo"}>
-              CATALOGUE
+              CATÁLOGO
               {Pages === "Catalogo"}
             </Link>
-            {/* <a href="#">CATALOGUE</a> */}
+            {/* <a href="#">CATALOGO</a> */}
           </li>
+<<<<<<< HEAD
           <li onClick={() => setPages("SobreNosotros")}>
             <Link to={"/sobreNosotros"}>
               ABOUT US
               {Pages === "SobreNosotros"}
+=======
+          <li onClick={() => setPages("AboutUS")}>
+            <Link to={"/about-us"}>
+              SOBRE NOSOTRES
+              {Pages === "AboutUS"}
+>>>>>>> 192086b82172419d165995dfe638652061c0fa67
             </Link>
             {/*  <a href="#">ABOUT US</a> */}
           </li>
           <li onClick={() => setPages("Contacto")}>
             <Link to={"/contacto"}>
-              CONTACT
+              CONTACTO
               {Pages === "Contacto"}
             </Link>
             {/*  <a href="#">CONTACT</a> */}

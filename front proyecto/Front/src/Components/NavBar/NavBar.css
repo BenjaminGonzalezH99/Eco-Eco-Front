@@ -10,9 +10,13 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+<<<<<<< HEAD
   padding: 2rem;
   z-index: 3;
   /*margin-bottom: 12%;*/
+=======
+  z-index: 1;
+>>>>>>> 192086b82172419d165995dfe638652061c0fa67
 }
 
 .navbar {
@@ -21,7 +25,10 @@ header {
   align-items: center;
   width: 100%;
   padding-right: 10%;
+<<<<<<< HEAD
   /*position: sticky;*/
+=======
+>>>>>>> 192086b82172419d165995dfe638652061c0fa67
   font: oblique bold 90% cursive;
 }
 

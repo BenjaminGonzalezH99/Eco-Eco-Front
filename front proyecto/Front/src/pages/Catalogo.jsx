@@ -1,7 +1,12 @@
-import React from "react";
+import React from 'react';
+import Catalogo from './Catalogo';
 
-function Catalogo() {
-  return <div>catalogo</div>;
+function CatalogoPage() {
+  return (
+    <div>
+      <Categoria />
+    </div>
+  );
 }
 
-export default Catalogo;
+export default CatalogoPage;
