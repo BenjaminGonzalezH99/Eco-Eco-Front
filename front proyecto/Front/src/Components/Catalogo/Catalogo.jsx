@@ -1,50 +1,29 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Navbar from '../NavBar/NavBar';
+import React from "react";
+import CardsPO from "../Cards/CardsPO";
+import CardsPA from "../Cards/CardsPA";
+import ReactDOM from "react-dom";
 
 const Catalogo = () => {
   return (
-    <><div className="content">
-        <h1>Catálogo</h1>
-        <p>FILTROS</p>
-        <div className="container">
-          <div className="card">
-            <img src="rasuradora.jpg" alt="Rasuradora Desechable" />
-            <h2>Rasuradora</h2>
-            <p>Desechable</p>
-          </div>
-
-          <div className="card">
-            <img src="toalla.jpg" alt="Toalla Higiénica Reutilizable" />
-            <h2>Toalla Higiénica</h2>
-            <p>Reutilizable</p>
-          </div>
-
-          <div className="card">
-            <img src="rasuradora.jpg" alt="Rasuradora Intercambiable" />
-            <h2>Rasuradora</h2>
-            <p>Intercambiable</p>
-          </div>
-
-          <div className="card">
-            <img src="mat-horno.jpg" alt="Mat De Horno De Silicona" />
-            <h2>Mat De Horno</h2>
-            <p>De Silicona</p>
-          </div>
-
-          <div className="card">
-            <img src="toalla.jpg" alt="Toalla Higiénica Reutilizable" />
-            <h2>Toalla Higiénica</h2>
-            <p>Reutilizable</p>
-          </div>
-
-          <div className="card">
-            <img src="mat-horno.jpg" alt="Mat De Horno De Silicona" />
-            <h2>Mat De Horno</h2>
-            <p>De Silicona</p>
-          </div>
+    <>
+      {/*<CardsPO producto={product.data}*/}
+      <main>
+        <div className="TituloCatalogo">
+          <h1>.</h1> 
+          <p>Filtros</p>
+          <h1>Catálogo</h1>
+          <p>Filtros</p>
         </div>
-      </div></>
+        <section className="catalogoCard">
+          <div className="">Card 1</div>
+          <div className="">Card </div>
+          <div className="">Card 1</div>
+          <div className="">Card 2</div>
+          <div className="">Card 1</div>
+          <div className="">Card 2</div>
+        </section>
+      </main>
+    </>
   );
 };
 
