@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import logo from "../assets/ecochancho_blanco.png";
+import logo from "../assets/EcoEco_Chancho.png";
 import "../NavBar/NavBar.css";
 import { Link } from "react-router-dom";
 
@@ -15,7 +15,6 @@ function Navbar() {
       <nav className="navbar">
         <div className="navbar-logo">
           <img src={logo} alt="logo" />
-          <p>ECO ECO</p>
         </div>
         <div className="menu-icon" onClick={handleMenuClick}>
           <div className={menuOpen ? "menu-bar open" : "menu-bar"}></div>

@@ -14,7 +14,7 @@ function CardsPA({ producto }) {
             src={`src/Components/assets/${
               producto && producto.imagenProductoAlternativo
             }`}
-            alt="razuradora"
+            /* alt="razuradora" */
           />
         </div>
         <hr />

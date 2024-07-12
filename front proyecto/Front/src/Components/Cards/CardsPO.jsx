@@ -7,16 +7,16 @@ function CardsPO({ producto }) {
   const handleClick = () => {
     navigate(`/comparador/${producto.idProductoOriginal}`);
   };
-
+  console.log(producto);
   return (
     <div className="cardContainer" onClick={handleClick}>
       <div className="card">
         <div className="im">
           <img
-            src={`src/Components/assets/${
+            src={`src/Components/assets${
               producto && producto.imagenProductoOriginal
             }`}
-            alt="razuradora"
+            /* alt="razuradora" */
           />
         </div>
         <hr />

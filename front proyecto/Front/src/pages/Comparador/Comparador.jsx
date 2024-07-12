@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
-import CardsPA from "../../Components/Cards/CardsPA";
 import CardsPO from "../../Components/Cards/CardsPO";
+import CardsPA from "../../Components/Cards/CardsPA";
 import "./Comparador.css";
 import axios from "axios";
-import { useParams } from "react-router-dom";
 
 const url = "http://localhost:8080/";
 const client = axios.create({
@@ -11,105 +10,67 @@ const client = axios.create({
 });
 
 function Comparador() {
-  const { id } = useParams();
-  const [product, setProduct] = useState({});
-  const [isOriginal, setIsOriginal] = useState(true);
+  const [producto1, setProduct1] = useState({});
+  const [producto2, setProduct2] = useState({});
 
   useEffect(() => {
-    client.get(`${url}productoOriginales/buscar/${id}`).then((response) => {
-      const productoOriginal = response.data;
-      if (productoOriginal) {
-        setIsOriginal(true);
-        setProduct({ original: productoOriginal });
-      } else {
-        client
-          .get(`${url}productoAlternativos/buscar/${id}`)
-          .then((responseAlternativo) => {
-            const productoAlternativo = responseAlternativo.data;
-            setIsOriginal(false);
-            setProduct({ alternativo: productoAlternativo });
-          });
-      }
+    client.get(`${url}productoOriginales/buscar/2`).then((response1) => {
+      setProduct1(response1.data);
     });
-  }, [id]);
+  }, []);
 
-  if (!product.original && !product.alternativo) {
-    return <div>Cargando...</div>;
-  }
-
-  let productoOriginal;
-  let productoAlternativo;
-  if (isOriginal) {
-    productoOriginal = product.original;
-    productoAlternativo = {};
-  } else {
-    productoAlternativo = product.alternativo;
-    productoOriginal = {};
-  }
+  useEffect(() => {
+    client.get(`${url}productoAlternativos/buscar/3`).then((response2) => {
+      setProduct2(response2.data);
+    });
+  }, []);
 
   const costoPorUsoOriginal = (
-    productoOriginal.precioProductoOriginal /
-    productoOriginal.durabilidadProductoOriginal
+    producto1.precioProductoOriginal / producto1.durabilidadProductoOriginal
   ).toFixed(1);
   const costoPorUsoAlternativo = (
-    productoAlternativo.precioProductoAlternativo /
-    productoAlternativo.durabilidadProductoAlternativo
+    producto2.precioProductoAlternativo /
+    producto2.durabilidadProductoAlternativo
   ).toFixed(1);
-
+  console.log(producto1);
   return (
     <>
       <div className="container">
         <div className="div1 DIV">
-          {isOriginal ? (
-            <CardsPO producto={productoOriginal} />
-          ) : (
-            <CardsPA producto={productoAlternativo} />
-          )}
+          <CardsPO producto={producto1} />
         </div>
 
         <div className="div2 DIV">
-          {isOriginal ? (
-            <CardsPA producto={productoAlternativo} />
-          ) : (
-            <CardsPO producto={productoOriginal} />
-          )}
+          <CardsPA producto={producto2} />
         </div>
 
         <div className="costoUso DIV div-borde">
           <div className="costoUso-datos div-izquierda">
-            {isOriginal ? costoPorUsoOriginal : costoPorUsoAlternativo}
+            {costoPorUsoOriginal}
           </div>
-          <div className="costoUso-datos DIV-centro">COSTO POR USO </div>
+          <div className="costoUso-datos DIV-centro">Costo Por Uso </div>
           <div className="costoUso-datos div-derecha">
-            {isOriginal ? costoPorUsoAlternativo : costoPorUsoOriginal}
+            {costoPorUsoAlternativo}
           </div>
         </div>
         <div className="div5 DIV">
           <div className="div-precio div-borde">
             <div className="precio div-izquierda">
-              {isOriginal
-                ? productoOriginal.precioProductoOriginal
-                : productoAlternativo.precioProductoAlternativo}
+              {producto1.precioProductoOriginal}
             </div>
-            <div className="precio DIV-centro">PRECIO</div>
+            <div className="precio DIV-centro">Precio</div>
             <div className="precio div-derecha">
-              {isOriginal
-                ? productoAlternativo.precioProductoAlternativo
-                : productoOriginal.precioProductoOriginal}
+              {producto2.precioProductoAlternativo}
             </div>
           </div>
 
           <div className="div-durabilidad div-borde">
             <div className="durabilidad div-izquierda">
-              {isOriginal
-                ? productoOriginal.durabilidadProductoOriginal
-                : productoAlternativo.durabilidadProductoAlternativo}
+              {producto1.durabilidadProductoOriginal}
             </div>
-            <div className="durabilidad DIV-centro">DURABILIDAD</div>
+            <div className="durabilidad DIV-centro">Durabilidad</div>
             <div className="durabilidad div-derecha">
-              {isOriginal
-                ? productoAlternativo.durabilidadProductoAlternativo
-                : productoOriginal.durabilidadProductoOriginal}
+              {producto2.durabilidadProductoAlternativo}
             </div>
           </div>
         </div>

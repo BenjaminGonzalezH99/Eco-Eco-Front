@@ -39,7 +39,7 @@ function Inicio() {
       setProducts(products);
     });
   }, []);
-
+  console.log(products);
   return (
     <main>
       <div id="cssportal-grid" className="container">
