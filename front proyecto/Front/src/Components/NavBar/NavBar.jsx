@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "../assets/EcoEco_Logo_Blanco_Horizontal.png"
+import logo from "../assets/EcoEco_Logo_Blanco_Horizontal.png";
 import "../NavBar/NavBar.css";
 
 function Navbar() {
@@ -36,17 +36,10 @@ function Navbar() {
             </Link>
             {/* <a href="#">CATALOGO</a> */}
           </li>
-<<<<<<< HEAD
           <li onClick={() => setPages("SobreNosotros")}>
             <Link to={"/sobreNosotros"}>
-              ABOUT US
-              {Pages === "SobreNosotros"}
-=======
-          <li onClick={() => setPages("AboutUS")}>
-            <Link to={"/about-us"}>
               SOBRE NOSOTRES
-              {Pages === "AboutUS"}
->>>>>>> 192086b82172419d165995dfe638652061c0fa67
+              {Pages === "SobreNosotros"}
             </Link>
             {/*  <a href="#">ABOUT US</a> */}
           </li>

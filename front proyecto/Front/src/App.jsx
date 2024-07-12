@@ -18,7 +18,6 @@ function App() {
         <Route path="/contacto" element={<Contacto />}></Route>
         <Route path="/comparador" element={<Comparador />}></Route>
         <Route path="/sobreNosotros" element={<SobreNosotros />}></Route>
-
         <Route path="/comparador/:id" element={<Comparador />}></Route>
         <Route path="/catalogo" element={<Catalogo />}></Route>
       </Routes>

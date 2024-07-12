@@ -1,4 +1,3 @@
-import "@fontsource/dm-sans";
 import React from "react";
 import logo1 from "../../Components/assets/ecochancho.png";
 import "./SobreNosotros.css";
